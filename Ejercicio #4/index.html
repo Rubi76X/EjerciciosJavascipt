@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</script><meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <h1>Ejercicio #4</h1>
+    <h2>Escribir una función que tome un arreglo ordenado y devuelva un arreglo 
+        completamente desordenado Entrada: [1, 2, 5, 14, 24, 31, 50, 105] 
+        Posible salida: [105, 31, 14, 1, 2, 50, 24, 5].</h2>
+</body>
+</html>
+
+<script>
+
+
+    function arrayDesordenado(array){
+        let aux = 0;
+        let arrayAux = [];
+        for(let i = 0; i < array.length-i; i++){
+            arrayAux[aux++] = array[array.length-1-i];
+            arrayAux[aux++] = array[i];
+        }; 
+        return (arrayAux); 
+    }; 
+    
+
+    console.log(arrayDesordenado([1, 2, 5, 14, 24, 31, 50, 105]));
+    document.write("<h2>El resultado del caso 1 es: <h2>" + arrayDesordenado([1, 2, 5, 14, 24, 31, 50, 105]));
+
+</script>
+    
