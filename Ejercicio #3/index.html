@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Ejercicio #3</h1>
+    <h2>Escribir una función que permita saber si un número se repite dentro de un
+         arreglo.</h2>
+
+    <h3>Blockquote Casos de prueba:</h3>
+    <ol>
+        <li>Caso 1: Resultado esperado: El número 5 se encuentra más 
+            de una vez [1, 22, 5, 17, 10, 5, 40, 5]</li>
+        <li>Caso 2: Resultado esperado: El número 7 se encuentra más 
+            de una vez [7, 41, 5, 7, 10, 13, 2]</li>
+        <li>Caso 3: Resultado esperado: No hay números repetidos 
+            [1, 22, 5, 14, 24, 31, 27, 15, 105]</li>
+        <li>Caso 4: Resultado esperado: No hay números repetidos 
+            [50, 11, 12, 14, 24, 31, 27, 15, 105]</li>
+    </ol>
+</body>
+</html>
+
+<script>
+
+
+    function valorMasFrecuente(array){
+        let auxArray = [];
+        for (let i=0; i< array.length; i++){
+            let cantidad = 0;
+            for (let j = 0; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    cantidad++;
+                }
+            }
+            auxArray[i] = cantidad;
+        }
+
+        let x = 0;
+        let max = 0;
+        for (let i = 0; i < 8; i++){
+            if (max < auxArray[i]){
+                max = auxArray[i];
+                x = i;
+            }
+        }
+        if(array[x]==1){
+            return("NO HAY NÚMEROS REPETIDOS")    
+        }else{
+            return (array[x])
+        }
+        
+    }; 
+    
+
+    console.log(valorMasFrecuente([1, 22, 5, 17, 10, 5, 40, 5]));
+    document.write("<h2>El resultado del caso 1 es: <h2>" + valorMasFrecuente([1, 22, 5, 17, 10, 5, 40, 5]));
+
+        
+    console.log(valorMasFrecuente([7, 41, 5, 7, 10, 13, 2]));
+    document.write("<h2>El resultado del caso 2 es: <h2>" + valorMasFrecuente([7, 41, 5, 7, 10, 13, 2]));
+
+    console.log(valorMasFrecuente([1, 22, 5, 14, 24, 31, 27, 15, 105]));
+    document.write("<h2>El resultado del caso 3 es: <h2>" + valorMasFrecuente([1, 22, 5, 14, 24, 31, 27, 15, 105]));
+
+    console.log(valorMasFrecuente([50, 11, 12, 14, 24, 31, 27, 15, 105]));
+    document.write("<h2>El resultado del caso 4 es: <h2>" + valorMasFrecuente([1, 22, 5, 14, 24, 31, 27, 15, 105]));
+
+</script>
