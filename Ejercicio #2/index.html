@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio #2</h1>
+    <h2> María llega a su entrevista de trabajo para el rol de Desarrollador Junior 
+        y se le pide que resuelva este problema: Dada una lista de números [-1, 3, 4, 2, 6], 
+        escribe una función en javascript para calcular el número más pequeño.</h2>
+</body>
+</html>
+
+<script>
+
+    function valorMenor(arr){
+        let max = 0;
+        for(let x = 1; x < arr.length; x++){
+            max = (arr[max] < arr[x])? max: x;
+        };
+        return(arr[max]);
+    };
+
+    console.log(valorMenor([-1, 3, 4, 2, 6]));
+    document.write("<h2>El resultado es: <h2>" + valorMenor([-1, 3, 4, 2, 6]))
+
+</script>
